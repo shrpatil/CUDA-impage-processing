@@ -72,22 +72,22 @@ It is inevitable that all images taken from a camera will contain some amount of
 The kernel of a Gaussian filter with a standard deviation of _ = 1.4 is shown in Equation (1).
 
 	            	2    4      5    4    2
-		            4    9      12   9    4
-B= 1/159  *     5    12     15   12   5				(1)
+		        4    9      12   9    4
+B=      1/159    *   	5    12     15   12   5				(1)
 	            	4    9      12   9    4
-		            2    4      5    4    2
+		        2    4      5    4    2
 2.2 Finding gradients
 The Canny algorithm basically finds edges where the grayscale intensity of the image changes the most. These areas are found by determining gradients of the image. Gradients at each pixel in the smoothed image are determined by applying what is known as the Sobel-operator. 
 First step is to approximate the gradient in the x- and y-direction respectively by applying the kernels shown in Equation (2).
 
 
-			       -1    0    1
+	     -1    0    1
    Kx  =     -2    0    2					
-			       -1    0    1	
+	     -1    0    1	
 								                            	(2)
-			        1    2    1 
-	     Ky  =	0    0    0					
-			       -1   -2   -1
+	      1    2    1 
+   Ky  =      0    0    0					
+	     -1   -2   -1
 The gradient magnitudes (also known as the edge strengths) can then be determined as an
 Euclidean distance measure by applying the law of Pythagoras as shown in Equation (3). It
 is sometimes simplified by applying Manhattan distance measure as shown in Equation (4) to
